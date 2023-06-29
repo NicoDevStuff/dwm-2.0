@@ -32,3 +32,5 @@ alt + shift + e
 	thunderbird
 alt + f
 	pcmanfm
+alt + m
+	killall dwmblocks && dwmblocks
