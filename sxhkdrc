@@ -2,17 +2,33 @@ XF86Audio{Prev,Next,Play}
 	playerctl {previous,next,play-pause}
 
 XF86Audio{LowerVolume,RaiseVolume,Mute}
-	~/.config/dwm/scripts/volume.sh {down,up,mute}
-	pkill -RTMIN+10 dwmblocks
-
+	~/.config/dwm/scripts/volume.sh {down,up,mute} && kill -44 $(pidof dwmblocks)
+	
 XF86AudioMicMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 XF86MonBrightness{Up,Down}
 	brightnessctl set {+5%,5%-}
 
-alt + r
-	~/.config/dwm/scripts/bar_restart.sh
+@Caps_Lock
+	kill -54 $(pidof dwmblocks)
 
 Print
 	ksnip
+
+alt + Return
+	kitty
+alt + shift + Return
+	rofi -show drun
+alt + c
+	rofi -show calc -modi calc -no-show-match -no-sort
+alt + e
+	emoji-picker
+alt + s
+	signal-desktop
+alt + b
+	brave
+alt + shift + e
+	thunderbird
+alt + f
+	pcmanfm
