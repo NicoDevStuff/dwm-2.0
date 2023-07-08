@@ -19,3 +19,4 @@ is_running xclip || xclip &
 is_running easyeffects || easyeffects &
 is_running solaar || solaar &
 is_running sxhkd || sxhkd -c ~/.config/dwm/sxhkdrc &
+# cd ~

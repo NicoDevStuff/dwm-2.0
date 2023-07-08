@@ -18,6 +18,8 @@ Print
 
 alt + Return
 	kitty
+alt + Tab
+	rofi -show
 alt + shift + Return
 	rofi -show drun
 alt + c
@@ -32,5 +34,11 @@ alt + shift + e
 	thunderbird
 alt + f
 	pcmanfm
+alt + control + k
+	~/.config/dwm/scripts/keylayout.sh
+alt + space
+	~/.config/dwm/scripts/umlaute.sh
 alt + m
 	killall dwmblocks && dwmblocks
+alt + shift + k
+	killall sxhkd && sxhkd -c ~/.config/dwm/sxhkdrc
