@@ -1,44 +1,5 @@
-XF86Audio{Prev,Next,Play}
-	playerctl {previous,next,play-pause}
-
-XF86Audio{LowerVolume,RaiseVolume,Mute}
-	~/.config/dwm/scripts/volume.sh {down,up,mute} && kill -44 $(pidof dwmblocks)
-	
-XF86AudioMicMute
-	pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-XF86MonBrightness{Up,Down}
-	brightnessctl set {+5%,5%-}
-
 @Caps_Lock
 	kill -54 $(pidof dwmblocks)
 
 Print
 	ksnip
-
-alt + Return
-	kitty
-alt + Tab
-	rofi -show
-alt + shift + Return
-	rofi -show drun
-alt + c
-	rofi -show calc -modi calc -no-show-match -no-sort
-alt + e
-	emoji-picker
-alt + s
-	signal-desktop
-alt + b
-	brave
-alt + shift + e
-	thunderbird
-alt + f
-	pcmanfm
-alt + control + k
-	~/.config/dwm/scripts/keylayout.sh
-alt + space
-	~/.config/dwm/scripts/umlaute.sh
-alt + m
-	killall dwmblocks && dwmblocks
-alt + shift + k
-	killall sxhkd && sxhkd -c ~/.config/dwm/sxhkdrc
