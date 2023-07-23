@@ -1,5 +1,0 @@
-@Caps_Lock
-	kill -54 $(pidof dwmblocks)
-
-Print
-	ksnip
