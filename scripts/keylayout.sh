@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 dmenu="rofi -dmenu"
 layouts="de\nus\n"

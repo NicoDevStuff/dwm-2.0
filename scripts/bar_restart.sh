@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Read the PID from the file
 pid=$(cat ~/.config/dwm/pid)

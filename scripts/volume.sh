@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 function send_notification() {
 	volume=$(pamixer --get-volume)

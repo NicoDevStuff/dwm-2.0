@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 if [ $(pamixer --get-mute) = "true" ]; then
 	echo " 🔇 "
 else 

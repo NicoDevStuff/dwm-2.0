@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/sh
 
 umlaute="ä\nö\nü\nß\n"
 dmenu="rofi -dmenu"
