@@ -21,7 +21,11 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMono:size=12", "JoyPixels:style=Regular:size=12:antialias=true" };
+static const char *fonts[]          = { 
+	"JetBrainsMono:size=12", 
+	"JoyPixels:style=Regular:size=12:antialias=true",
+	"FontAwesome:size=12:antialias=true"
+};
 static const char dmenufont[]       = "JetBrains Mono:size=12";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#444444";
@@ -37,16 +41,17 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { 
-	"1",
-	"2",
-	"3",
-	"4",
-	"5",
-	"6",
-	"7",
-	"8",
-	"9"
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	""
 };
+/*          */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -56,7 +61,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "kitty",   NULL,     NULL,           0,         0,          1,           0,        -1 },
+	/* { "kitty",   NULL,     NULL,           0,         0,          1,           0,        -1 }, */
 	/* { "st",   NULL,     NULL,           0,         0,          1,           0,        -1 }, */
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
@@ -144,7 +149,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask, 			XK_k,      spawn,      SHCMD("~/.config/dwm/scripts/keylayout.sh") },
 	{ MODKEY, 						XK_space,  spawn,      SHCMD("~/.config/dwm/scripts/umlaute.sh") },
 	{ MODKEY, 						XK_m,  	   spawn,      SHCMD("killall dwmblocks && dwmblocks") },
-
+	{ MODKEY, 						XK_w,  	   spawn,      SHCMD("kill - 124 $(pidof dwmblocks)") },
 	// Media keys 💀
 	{ 0, 			   XF86XK_AudioPrev,  	   spawn,      SHCMD("playerctl previous") },
 	{ 0, 			   XF86XK_AudioNext,  	   spawn,      SHCMD("playerctl next") },
