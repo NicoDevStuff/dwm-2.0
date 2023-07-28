@@ -3,4 +3,4 @@
 	url = https://github.com/NicoDevStuff/dwmblocks-2.0.git
 [submodule "dwmblocks"]
 	path = dwmblocks
-	url = git@github.com:NicoDevStuff/dwmblocks-2.0.git
+	url = git@github.com:NicoDevStuff/dwmblocks.git
