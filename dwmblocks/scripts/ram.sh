@@ -1,2 +1,3 @@
 #!/bin/sh
-echo "$(awk '/MemTotal/ {total=$2} /MemAvailable/ {available=$2} END {printf("%.2f%%\n", (total - available) / total * 100)}' /proc/meminfo)"
+
+awk '/MemTotal/ {total=$2} /MemAvailable/ {available=$2} END {printf("%.2f GB\n", (total - available) / (1024*1024))}' /proc/meminfo

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function send_notification() {
+send_notification() {
 	volume=$(pamixer --get-volume)
 	dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "volume-$1" "Volume: ${volume}%" -t 2000
 }
