@@ -18,4 +18,5 @@ case "$clock" in
 	*) icon="🕛" ;;
 esac
 
-echo "$icon $(date '+%X')"
+# echo "$icon $(date '+%X')"
+echo "$icon $(date '+%H:%m')"

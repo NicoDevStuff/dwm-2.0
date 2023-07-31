@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "📅 $(date '+%b %d (%a)')"
+echo "📅 $(date '+%d.%m.%Y(%a)')"

@@ -5,11 +5,11 @@
 #include <X11/XF86keysym.h>
 
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 
-static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 5;       /* vert inner gap between windows */
+static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 20;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 15;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 15;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
@@ -36,20 +36,31 @@ static const char col_blue[]        = "#2588BE";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_gray1,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_gray2,  col_cyan  },
 };
 
 /* tagging */
+/* static const char *tags[] = { */ 
+/* 	"", */
+/* 	"", */
+/* 	"", */
+/* 	"", */
+/* 	"", */
+/* 	"", */
+/* 	"", */
+/* 	"", */
+/* 	"" */
+/* }; */
 static const char *tags[] = { 
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	""
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9"
 };
 /*          */
 
@@ -200,8 +211,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_x,      quit,		   {0} },
 	{ MODKEY|ShiftMask, 			XK_r,      quit,           {1} }, 
 
-	/* { MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } }, */
-	/* { MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } }, */
+	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
+	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	/* { MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } }, */
@@ -214,7 +225,7 @@ static const Key keys[] = {
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } }, */
-	/* { MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} }, */
+	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
 	{ MODKEY,    			   		   XK_g,      defaultgaps,    {0} },
 };
 
