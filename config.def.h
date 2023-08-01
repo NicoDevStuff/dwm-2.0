@@ -26,6 +26,11 @@ static const char *fonts[]          = {
 	"JoyPixels:style=Regular:size=12:antialias=true",
 	"FontAwesome:size=12:antialias=true"
 };
+/* static const char *fonts[]          = { */ 
+/* 	"JetBrainsMono:size=10", */ 
+/* 	"JoyPixels:style=Regular:size=10:antialias=true", */
+/* 	"FontAwesome:size=10:antialias=true" */
+/* }; */
 static const char dmenufont[]       = "JetBrains Mono:size=12";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#444444";

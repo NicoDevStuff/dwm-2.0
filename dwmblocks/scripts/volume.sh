@@ -1,14 +1,14 @@
 #!/bin/sh
 if [ $(pamixer --get-mute) = "true" ]; then
-	echo " 🔇 "
+	echo "🔇"
 else 
 	volume=$(pamixer --get-volume)
 
 	if [ "$volume" -eq 0 ]; then
-		echo " 🔈 $volume% "
+		echo "🔈 $volume%"
 	elif [ "$volume" -lt 50 ]; then
-		echo " 🔉 $volume% "
+		echo "🔉 $volume%"
 	else
-		echo " 🔊 $volume% "
+		echo "🔊 $volume%"
 	fi
 fi

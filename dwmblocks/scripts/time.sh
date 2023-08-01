@@ -19,4 +19,4 @@ case "$clock" in
 esac
 
 # echo "$icon $(date '+%X')"
-echo "$icon $(date '+%H:%m')"
+echo "$icon $(date '+%H:%M')"
