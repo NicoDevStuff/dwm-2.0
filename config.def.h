@@ -67,7 +67,6 @@ static const char *tags[] = {
 	"8",
 	"9"
 };
-/*          */
 
 static const Rule rules[] = {
 	/* xprop(1):
