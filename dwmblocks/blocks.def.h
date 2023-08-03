@@ -3,7 +3,6 @@ static const Block blocks[] = {
 	/*Icon*/	/*Command*/						/*Update Interval*/	/*Update Signal*/
 	{ "",   "~/.config/dwm/dwmblocks/scripts/volume.sh",	0,      10},
 	{ "", 	"~/.config/dwm/dwmblocks/scripts/updates.sh",	120,    40},
-	{ "",    "~/.config/dwm/dwmblocks/scripts/weather.sh",	12,     90},
 	{ "💻 ", "~/.config/dwm/dwmblocks/scripts/cpu.sh",		2,      0 },
 	{ "🔥 ", "~/.config/dwm/dwmblocks/scripts/cpuh.sh",		2,      0 },
 	{ "🧠 ", "~/.config/dwm/dwmblocks/scripts/ram.sh",		2,      0 },

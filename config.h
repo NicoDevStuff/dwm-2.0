@@ -26,6 +26,11 @@ static const char *fonts[]          = {
 	"JoyPixels:style=Regular:size=12:antialias=true",
 	"FontAwesome:size=12:antialias=true"
 };
+/* static const char *fonts[]          = { */ 
+/* 	"JetBrainsMono:size=10", */ 
+/* 	"JoyPixels:style=Regular:size=10:antialias=true", */
+/* 	"FontAwesome:size=10:antialias=true" */
+/* }; */
 static const char dmenufont[]       = "JetBrains Mono:size=12";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#444444";
@@ -62,7 +67,6 @@ static const char *tags[] = {
 	"8",
 	"9"
 };
-/*          */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -190,7 +194,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask|ControlMask, XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ControlMask,           XK_m,      setlayout,      {.v = &layouts[2]} },
 	/* { MODKEY|ShiftMask,             XK_space,  setlayout,      {0} }, */
 	{ MODKEY|ShiftMask, 			XK_f,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
