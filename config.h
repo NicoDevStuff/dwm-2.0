@@ -147,6 +147,24 @@ setmfact_limited(const Arg *arg) {
 	arrange(selmon);
 }
 
+int cmonocle = 0;
+void
+togglemonocle()
+{
+	if (cmonocle) {
+		selmon->lt[selmon->sellt] = &layouts[0];
+		cmonocle = 0;
+	} else {
+		selmon->lt[selmon->sellt] = &layouts[2];
+		cmonocle = 1;
+	}
+	strncpy(selmon->ltsymbol, selmon->lt[selmon->sellt]->symbol, sizeof selmon->ltsymbol);
+	if (selmon->sel)
+		arrange(selmon);
+	else
+		drawbar(selmon);
+}
+
 #include "push.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -176,6 +194,9 @@ static const Key keys[] = {
 	{ 0, 		       XF86XK_MonBrightnessUp ,spawn,      SHCMD("brightnessctl set +5%") },
 	{ 0, 		       XF86XK_MonBrightnessDown,spawn,     SHCMD("brightnessctl set 5%-") },
 	{ 0, 		       XK_Print           	  ,spawn, 	   SHCMD("ksnip") },
+
+
+	{ MODKEY|ShiftMask,             XK_space,  togglemonocle, { } },
 
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_x,      quit,           {0} },
