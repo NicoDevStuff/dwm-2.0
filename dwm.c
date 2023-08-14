@@ -259,6 +259,7 @@ static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
+static void togglemonocle();
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
 static void unfocus(Client *c, int setfocus);
@@ -294,6 +295,7 @@ static pid_t winpid(Window w);
 
 /* variables */
 static Systray *systray =  NULL;
+int cmonocle = 0;
 static const char broken[] = "broken";
 static char stext[256];
 static int screen;
@@ -2052,6 +2054,23 @@ togglebar(const Arg *arg)
 		XConfigureWindow(dpy, systray->win, CWY, &wc);
 	}
 	arrange(selmon);
+}
+
+void
+togglemonocle()
+{
+	if (cmonocle) {
+		selmon->lt[selmon->sellt] = &layouts[0];
+		cmonocle = 0;
+	} else {
+		selmon->lt[selmon->sellt] = &layouts[2];
+		cmonocle = 1;
+	}
+	strncpy(selmon->ltsymbol, selmon->lt[selmon->sellt]->symbol, sizeof selmon->ltsymbol);
+	if (selmon->sel)
+		arrange(selmon);
+	else
+		drawbar(selmon);
 }
 
 void

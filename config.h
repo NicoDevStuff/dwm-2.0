@@ -129,41 +129,6 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-static void 
-setmfact_limited(const Arg *arg) {
-	float f;
-
-	if (!arg || !selmon->lt[selmon->sellt]->arrange)
-		return;
-
-	f = arg->f < 1.0 ? arg->f + selmon->mfact : arg->f - 1.0;
-
-	if (f < mfact_min)
-		f = mfact_min;
-	if (f > mfact_max)
-		f = mfact_max;
-
-	selmon->mfact = f;
-	arrange(selmon);
-}
-
-int cmonocle = 0;
-void
-togglemonocle()
-{
-	if (cmonocle) {
-		selmon->lt[selmon->sellt] = &layouts[0];
-		cmonocle = 0;
-	} else {
-		selmon->lt[selmon->sellt] = &layouts[2];
-		cmonocle = 1;
-	}
-	strncpy(selmon->ltsymbol, selmon->lt[selmon->sellt]->symbol, sizeof selmon->ltsymbol);
-	if (selmon->sel)
-		arrange(selmon);
-	else
-		drawbar(selmon);
-}
 
 #include "push.c"
 static const Key keys[] = {
@@ -209,8 +174,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact_limited,{.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact_limited,{.f = +0.05} },
+	{ MODKEY,                       XK_h,      setmfact,  	   {.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,	   {.f = +0.05} },
 	{ MODKEY|ControlMask,           XK_Return, zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
