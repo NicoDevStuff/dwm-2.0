@@ -12,12 +12,12 @@ is_running nm-applet || nm-applet &
 is_running volumeicon || volumeicon &
 # for laptop users only!
 # is_running cbatticon || cbatticon &
-is_running conky || conky -c ~/.config/conky/qtile/conky.conf &
+is_running conky || conky -c ~/.config/conky/dwm/conky.conf &
 is_running udiskie || udiskie &
 is_running xclip || xclip &
 is_running easyeffects || easyeffects &
 is_running solaar || solaar &
-is_running picom || picom &
+# is_running picom || picom &
 
 # No more caps lock
 setxkbmap -option caps:none
