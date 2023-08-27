@@ -17,7 +17,7 @@ is_running udiskie || udiskie &
 is_running xclip || xclip &
 is_running easyeffects || easyeffects &
 is_running solaar || solaar &
-# is_running picom || picom &
+is_running picom || picom --experimental-backends &
 
 # No more caps lock
 setxkbmap -option caps:none
