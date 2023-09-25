@@ -113,7 +113,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -159,7 +159,6 @@ static const Key keys[] = {
 	{ 0, 		       XF86XK_MonBrightnessUp ,spawn,      SHCMD("brightnessctl set +5%") },
 	{ 0, 		       XF86XK_MonBrightnessDown,spawn,     SHCMD("brightnessctl set 5%-") },
 	{ 0, 		       XK_Print           	  ,spawn, 	   SHCMD("ksnip") },
-
 
 	{ MODKEY|ShiftMask,             XK_space,  togglemonocle, { } },
 

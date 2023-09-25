@@ -1,6 +1,6 @@
 #!/bin/sh
 
-umlaute="ä\nö\nü\nß\n"
+umlaute="ä\nÄ\nö\nÖ\nü\nÜ\nß\nЯ"
 dmenu="rofi -dmenu"
 
 sel="$(printf $umlaute | $dmenu)"
