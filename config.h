@@ -23,7 +23,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { 
 	"JetBrainsMono:size=12", 
-	"JoyPixels:style=Regular:size=12:antialias=true",
+	"Noto Color Emoji:style=Regular:size=12:antialias=true",
 	"FontAwesome:size=12:antialias=true"
 };
 /* static const char *fonts[]          = { */ 
