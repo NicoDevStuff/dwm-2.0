@@ -21,16 +21,16 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { 
-	"JetBrainsMono:size=12", 
-	"Noto Color Emoji:style=Regular:size=12:antialias=true",
-	"FontAwesome:size=12:antialias=true"
-};
 /* static const char *fonts[]          = { */ 
-/* 	"JetBrainsMono:size=10", */ 
-/* 	"JoyPixels:style=Regular:size=10:antialias=true", */
-/* 	"FontAwesome:size=10:antialias=true" */
+/* 	"JetBrainsMono:size=12", */ 
+/* 	"Noto Color Emoji:style=Regular:size=12:antialias=true", */
+/* 	"FontAwesome:size=12:antialias=true" */
 /* }; */
+static const char *fonts[]          = { 
+	"JetBrainsMono:size=10", 
+	"Noto Color Emoji:style=Regular:size=10:antialias=true",
+	"FontAwesome:size=10:antialias=true"
+};
 static const char dmenufont[]       = "JetBrains Mono:size=12";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#3c3836";
